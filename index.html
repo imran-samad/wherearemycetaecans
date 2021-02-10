@@ -1002,10 +1002,17 @@
             // console.log('INPUT ENTERED (inp)=', inp)
             if (inp) {
                 for (species in species_list) {
+                    if (species_list[species].startswith(inp)) {
+                        highligt(species_to_id[species_list[species]]);
+                        // console.log(species_list[species])
+                        return 0;
+                    }
+                }
+                for (species in species_list) {
                     if (species_list[species].includes(inp)) {
                         highligt(species_to_id[species_list[species]]);
                         // console.log(species_list[species])
-                        break;
+                        return 0;
                     }
                 }
             }
