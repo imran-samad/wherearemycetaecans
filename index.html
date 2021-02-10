@@ -946,7 +946,7 @@
 
     <!-- HEre is where the magic happens -->
     <script>
-        // will clear all highligts
+        // will clear all highlights
         function clear() {
             $('area').mouseout();
         }
@@ -960,7 +960,7 @@
         }
 
         // <!-- THis script is for highlighting the particular animal from the name  -->
-        function highligt(id_str) {
+        function highlight(id_str) {
             // First un-highlight everything
             clear();
             //highlight the particular thing
@@ -974,14 +974,14 @@
             if (inp) {
                 for (species in species_list) {
                     if (species_list[species].toString().startsWith(inp)) {
-                        highligt(species_to_id[species_list[species]]);
+                        highlight(species_to_id[species_list[species]]);
                         // console.log(species_list[species])
                         return 0;
                     }
                 }
                 for (species in species_list) {
                     if (species_list[species].includes(inp)) {
-                        highligt(species_to_id[species_list[species]]);
+                        highlight(species_to_id[species_list[species]]);
                         // console.log(species_list[species])
                         return 0;
                     }
