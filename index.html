@@ -973,7 +973,7 @@
             // console.log('INPUT ENTERED (inp)=', inp)
             if (inp) {
                 for (species in species_list) {
-                    if (species_list[species].toString().startsWith(inp)) {
+                    if (species_list[species].startsWith(inp)) {
                         highlight(species_to_id[species_list[species]]);
                         // console.log(species_list[species])
                         return 0;
