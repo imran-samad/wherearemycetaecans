@@ -944,7 +944,51 @@
         }
     </script>
 
+    <!-- HEre is where the magic happens -->
+    <script>
+        // will clear all highlights
+        function clear() {
+            $('area').mouseout();
+        }
 
+        // This will clear the input on pressing enter
+        function clear_inp() {
+
+            $('#searchbar').val('');
+            clear();
+            $('#searchbar').focus();
+        }
+
+        // <!-- THis script is for highlighting the particular animal from the name  -->
+        function highlight(id_str) {
+            // First un-highlight everything
+            clear();
+            //highlight the particular thing
+            $('#' + id_str).mouseover();
+        }
+
+        // here is where the input for the search is processed
+        function search_animal() {
+            inp = $('#searchbar').val().toLowerCase();
+            // console.log('INPUT ENTERED (inp)=', inp)
+            if (inp) {
+                for (species in species_list) {
+                    if (species_list[species].startsWith(inp)) {
+                        highlight(species_to_id[species_list[species]]);
+                        // console.log(species_list[species])
+                        return 0;
+                    }
+                }
+                for (species in species_list) {
+                    if (species_list[species].includes(inp)) {
+                        highlight(species_to_id[species_list[species]]);
+                        // console.log(species_list[species])
+                        return 0;
+                    }
+                }
+            }
+        }
+    </script>
 
     <!-- This script is just for adding classes to each of the area tags, allows for Easy Modifications -->
     <script>
@@ -973,44 +1017,7 @@
         species_list = Object.keys(species_to_id);
     </script>
 
-    <!-- HEre is where the magic happens -->
-    <script>
-        // will clear all highligts
-        function clear() {
-            $('area').mouseout()
-        }
 
-        // This will clear the input on pressing enter
-        function clear_inp() {
-
-            $('#searchbar').val('')
-            clear()
-            $('#searchbar').focus()
-        }
-
-        // <!-- THis script is for highlighting the particular animal from the name  -->
-        function highligt(id_str) {
-            // First un-highlight everything
-            clear()
-            //highlight the particular thing
-            $('#' + id_str).mouseover()
-        }
-
-        // here is where the input for the search is processed
-        function search_animal() {
-            inp = $('#searchbar').val().toLowerCase();
-            // console.log('INPUT ENTERED (inp)=', inp)
-            if (inp) {
-                for (species in species_list) {
-                    if (species_list[species].includes(inp)) {
-                        highligt(species_to_id[species_list[species]]);
-                        // console.log(species_list[species])
-                        break;
-                    }
-                }
-            }
-        }
-    </script>
 
 
 </body>
