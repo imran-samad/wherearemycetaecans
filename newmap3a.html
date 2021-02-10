@@ -5,33 +5,7 @@
     <title>Marine mammals of the world</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="Content-language" content="en">
-    <!-- <link rel="bookmark" type="text/html" title="Mapper.js" href="http://www.netzgesta.de/mapper/"> -->
-    <!-- <meta name="Author" lang="en" content="mapper.netzgesta.de - Christian Effenberger">
-    <meta name="Publisher" lang="en" content="www.netzgesta.de">
-    <meta name="Copyright" lang="en" content="www.netzgesta.de - Christian Effenberger">
-    <meta name="Generator" lang="en" content="Christian Effenberger">
-    <meta name="Description" lang="en"
-        content="Mapper.js 2.4 allows you to add automatic area highlighting to image maps on your webpages through unobtrusive javascript">
-    <meta name="Keywords" lang="en"
-        content="mapper.js,cvi_map_lib.js,image map,automatic,highlighting,border,opacity,color,export,svg,unobtrusive javascript,Mozilla,Firefox,Opera,Safari">
-    <meta http-equiv="imagetoolbar" content="no">
-    <meta http-equiv="Content-Script-Type" content="text/javascript"> -->
-
-    <!-- wz_jsgraphics.js is not a part of this distribution. Source:
-	http://www.walterzorn.com/jsgraphics/jsgraphics_e.htm#download -->
-    <!-- <script type="text/javascript" src="wz_jsgraphics.js"></script> -->
-    <!-- <link rel="stylesheet" type="text/css" href="./style.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="tooltip.css" /> -->
-
-    <!-- <script type="text/javascript" src="cvi_tip_lib.js"></script> -->
-    <!-- <script type="text/javascript" src="maputil.js"></script> -->
     <script type="text/javascript" src="mapper.js"></script>
-    <!-- <script type="text/javascript">
-
-    </script> -->
-    <!-- linking the stylesheet(CSS) -->
-    <!-- <meta http-equiv="Content-Style-Type" content="text/css"> -->
-
     <style>
         .wrapper {
             position: absolute;
@@ -52,30 +26,8 @@
             width: 100%;
         }
     </style>
-    <style>
-        /* .map-container {
-            background-size: cover;
-            position: relative;
-        }
-
-        .map-container canvas {
-            position: absolute;
-        }
-
-        .map-container img {
-            opacity: 0;
-            position: absolute;
-        } */
-    </style>
-    <!--[if lt IE 7]>
-<style type="text/css">
-cvi_tooltip {
-	width:expression(this.offsetWidth>240?'240px':'auto');
-}
-</style>
-
-<![endif]-->
 </head>
+
 
 <body>
     <img class="mapper" src="Final_online.jpg" usemap="#Map" width="100%" height="100%" border="0" alt="" />
@@ -994,6 +946,7 @@ cvi_tooltip {
     </map>
 
     <script type="text/javascript">
+        // This script is to resize the area to the image drawn on the webpage
         window.onload = function () {
             var ImageMap = function (map) {
                 var n,
