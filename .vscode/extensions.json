@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "ecmel.vscode-html-css",
-        "abusaidm.html-snippets"
+        "abusaidm.html-snippets",
+        "msjsdiag.debugger-for-chrome"
     ]
 }
