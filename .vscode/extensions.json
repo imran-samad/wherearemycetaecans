@@ -2,6 +2,7 @@
     "recommendations": [
         "ecmel.vscode-html-css",
         "abusaidm.html-snippets",
-        "msjsdiag.debugger-for-chrome"
+        "msjsdiag.debugger-for-chrome",
+        "eamodio.gitlens"
     ]
 }
