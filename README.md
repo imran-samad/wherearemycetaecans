@@ -2,7 +2,7 @@
 ---
 
 ## Features
-* Easy tracking of various Cetacians across the world map
+* Easy tracking of various cetaceans across the world map
 * Hover to Highlight
 * Search function to isolate a particular species
 
