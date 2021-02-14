@@ -1059,7 +1059,6 @@
         // var counter = 0 // This variable stores the number of species in the array
         var sp_set = new Set()
         var area_set = new Set()
-        INTER_FLAG = false
         Set.prototype.intersection = function (otherSet) {
             // creating new set to store intersection 
             var intersectionSet = new Set();
@@ -1095,7 +1094,6 @@
             return unionSet;
         }
         function find_intersection_areas() {
-            INTER_FLAG = true
             if (sp_set.size === 0) {
                 area_set = new Set(this.rel.split(','));
                 sp_set.add(this.id);
@@ -1105,8 +1103,14 @@
                 sp_set.delete(this.id)
                 if (sp_set.size === 0) {
                     area_set = new Set()
-                    // clear()
-                    INTER_FLAG = false
+                    //  $('#' + this.id).attr({
+                    //     'onmouseout': "setAreaOut(this, 'main_image_canvas', 0, 0); null",
+                    //     // 'onmouseover': "setAreaOver(this,'main_image_canvas','0,0,255','0,0,0','0.33',0,0,0);null"
+                    // })
+                    // $('#' + this.id).mouseout();
+                    // console.log([...sp_set])
+                    enable_hover()
+                    clear()
                     return 0
                 }
                 area_set = new Set($('#' + sp_set.values().next().value)[0].rel.split(','))
@@ -1128,6 +1132,12 @@
             $('area').attr('onmouseout', null);
 
          }
+         function enable_hover() {
+             $('area').attr({
+                 'onmouseout': "setAreaOut(this, 'main_image_canvas', 0, 0); null",
+                 'onmouseover': "setAreaOver(this,'main_image_canvas','0,0,255','0,0,0','0.33',0,0,0);null"
+             })
+            }
 
     </script>
 
