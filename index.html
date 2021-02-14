@@ -1089,13 +1089,19 @@
             if (sp_set.size === 0) {
                 area_set=new Set(this.rel.split(','));
                 sp_set.add(this.id);
-                return 0
+                // return 0
             }
             else if (sp_set.has(this.id)) {
                 sp_set.delete(this.id)
-                area_set=new Set()
+                if(sp_set.size===0)
+                {
+                    area_set=new Set()
+                    clear()
+                    return 0
+                }
+                area_set=new Set($('#'+sp_set.values().next().value)[0].rel.split(','))
                 sp_set.forEach(x=>{
-                    area_set=area_set.union(new Set($('#' + x)[0].rel.split(',')))
+                    area_set=area_set.intersection(new Set($('#' + x)[0].rel.split(',')))
                 })
             }
             else {
