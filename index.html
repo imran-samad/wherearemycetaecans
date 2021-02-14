@@ -1046,7 +1046,7 @@
             }
         }
     </script>
-    <!--This function was originally made to highlight intersection polygons for two or more species-->
+    <!--This function was originally made to highlight intersection polygons and species images for two or more species-->
         <script>
         var counter = 0
         var intersect = []
@@ -1061,7 +1061,7 @@
                 let area = document.getElementById(intersect[counter]).rel
                 new_area=intersect_area(area, new_area)
                 counter++;
-                document.getElementById("inter").rel=new_area
+                document.getElementById("inter").rel=new_area.concat(",",intersect)
                 highlight("inter")
                 }
             }
