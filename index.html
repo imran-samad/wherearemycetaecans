@@ -992,7 +992,6 @@
         var new_area= ""
             function find_intersection_areas(identifier) {
                 intersect[counter]= identifier.getAttribute("id")
-                console.log(counter)
                 if(counter===0){
                 new_area = document.getElementById(intersect[counter]).rel
                 counter++;
@@ -1001,7 +1000,6 @@
                 let area = document.getElementById(intersect[counter]).rel
                 new_area=intersect_area(area, new_area)
                 counter++;
-                console.log(new_area)
                 document.getElementById("inter").rel=new_area
                 highlight("inter")
                 }
@@ -1019,7 +1017,6 @@
                     x=x.concat(a[i])
                     c=0
                 }
-                console.log(x.toString())
                 return(x.toString())
             }
     </script>
