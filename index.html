@@ -1105,7 +1105,8 @@
                         /*execute a function when someone clicks on the item value (DIV element):*/
                         b.addEventListener("mouseover", function (e) {
                             /*insert the value for the autocomplete text field:*/
-                            inp.value = this.getElementsByTagName("input")[0].value;
+                            inp.value = this.innerText
+                            // inp.value = this.getElementsByTagName("input")[0].value;
                             search_animal()
                             /*close the list of autocompleted values,
                             (or any other open lists of autocompleted values:*/
@@ -1122,7 +1123,8 @@
                         });
                         b.addEventListener("click", function (e) {
                             /*insert the value for the autocomplete text field:*/
-                            inp.value = this.getElementsByTagName("input")[0].value;
+                            inp.value = this.innerText
+                            // console.log(inp.value)
                             search_animal()
                             /*close the list of autocompleted values,
                             (or any other open lists of autocompleted values:*/
@@ -1160,6 +1162,7 @@
                     currentFocus = 0
                 }
             });
+            i = 0
             function addActive(x) {
                 /*a function to classify an item as "active":*/
                 if (!x) return false;
@@ -1169,15 +1172,17 @@
                 if (currentFocus < 0) currentFocus = (x.length - 1);
                 /*add class "autocomplete-active":*/
                 x[currentFocus].classList.add("autocomplete-active");
-                // console.log(x[currentFocus].value)
-
+                console.log(currentFocus)
+                console.log(x)
+                console.log(i++)
                 // highlight(species_to_id[$('.autocomplete-active input').val()])
             }
             function removeActive(x) {
                 /*a function to remove the "active" class from all autocomplete items:*/
-                for (var i = 0; i < x.length; i++) {
-                    x[i].classList.remove("autocomplete-active");
-                }
+                // for (var i = 0; i < x.length; i++) {
+                //     x[i].classList.remove("autocomplete-active");
+                // }
+                $('.autocomplete-active').removeClass('autocomplete-active')
             }
             function closeAllLists(elmnt) {
                 /*close all autocomplete lists in the document,
