@@ -986,12 +986,11 @@
         }
     </script>
     <!--This function was originally made to highlight intersection polygons for two or more species-->
-    <!--But now I am first testing it to keep clicked species highlighted-->
         <script>
         var counter = 0
         var intersect = []
         var new_area= ""
-            function find_intersection_areas(identifier) { // I have only called this function on mouse click for first 5 whale species
+            function find_intersection_areas(identifier) {
                 intersect[counter]= identifier.getAttribute("id")
                 console.log(counter)
                 if(counter===0){
