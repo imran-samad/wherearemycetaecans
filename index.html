@@ -74,7 +74,8 @@
 
 
 <body>
-    <img class="mapper" src="Final_online.jpg" usemap="#Map" width="100%" height="100%" border="0" alt="" />
+    <img class="mapper" id="main_image" src="Final_online.jpg" usemap="#Map" width="100%" height="100%" border="0"
+        alt="" />
     <map name="Map">
         <area
             coords="453,228,450,232,449,232,450,242,449,242,449,244,448,244,447,247,445,247,445,249,443,249,443,251,441,251,435,258,434,266,432,266,432,265,430,266,410,266,410,267,406,267,406,268,390,268,372,272,372,271,368,271,368,270,354,270,352,269,350,270,350,269,346,270,345,268,343,268,341,265,338,265,338,264,266,264,266,263,262,263,262,262,244,262,244,261,240,261,240,260,228,260,228,259,224,259,224,258,198,256,198,257,192,258,154,260,140,260,140,261,136,261,136,262,132,262,130,265,128,265,127,267,125,267,122,271,120,271,119,273,117,273,116,275,106,277,106,278,104,278,104,279,100,279,100,280,92,280,92,281,89,281,89,282,86,283,86,288,78,287,78,288,76,288,76,289,72,289,72,290,65,291,64,293,60,293,60,294,46,293,46,292,42,291,42,290,38,290,38,289,34,289,34,288,32,288,32,287,26,287,24,286,22,287,22,286,2,286,0,273,0,238,0,93,43,92,140,92,467,92,468,117,468,170,467,170,467,174,463,177,463,179,461,180,461,182,457,185,457,187,455,188,454,191,450,193,450,198,455,204,455,206,457,207,457,209,459,210,458,212,459,215,459,216,458,216,458,224"
@@ -960,7 +961,7 @@
             coords="3476,1590,3476,1592,3478,1592,3478,1595,3481,1596,3481,1597,3484,1597,3485,1599,3490,1600,3490,1601,3494,1601,3494,1602,3496,1602,3496,1603,3500,1603,3501,1605,3510,1607,3510,1608,3512,1608,3512,1609,3516,1609,3517,1611,3520,1611,3521,1613,3524,1613,3526,1616,3528,1616,3528,1617,3530,1617,3530,1618,3534,1618,3534,1619,3537,1619,3538,1621,3548,1636,3540,1633,3537,1629,3534,1629,3533,1627,3530,1627,3529,1625,3526,1625,3526,1624,3520,1625,3520,1626,3494,1626,3464,1626,3464,1627,3460,1627,3460,1628,3444,1628,3444,1629,3440,1629,3440,1630,3394,1630,3386,1637,3380,1633,3379,1631,3376,1631,3375,1629,3372,1629,3372,1628,3350,1628,3342,1626,3342,1627,3335,1627,3327,1629,3325,1623,3327,1621,3340,1621,3347,1609,3348,1607,3357,1605,3358,1603,3362,1603,3362,1602,3364,1602,3364,1601,3372,1600,3372,1599,3376,1599,3376,1598,3380,1598,3380,1597,3384,1597,3384,1596,3396,1595,3396,1594,3424,1594,3466,1594,3466,1593,3469,1593,3470,1591"
             id="Bba" alt="Four-toothed whale" title="Four-toothed whale" rel="4,5,6,7,60,61,62,64,88" type="species" />
 
-        <area coords="3476,1590,3476,1592,3478,1592" id="inter" rel="2" />
+        <area shape="poly" coords="3476,1590,3476,1592,3478,1592" id="inter" rel="2" />
     </map>
 
     <!-- input tag -->
@@ -1051,6 +1052,7 @@
         // var counter = 0 // This variable stores the number of species in the array
         var sp_set = new Set()
         var area_set = new Set()
+        INTER_FLAG = false
         Set.prototype.intersection = function (otherSet) {
             // creating new set to store intersection 
             var intersectionSet = new Set();
@@ -1068,222 +1070,213 @@
             return intersectionSet;
         }
         Set.prototype.union = function (otherSet) {
-                // creating new set to store union 
-                var unionSet = new Set();
+            // creating new set to store union 
+            var unionSet = new Set();
 
-                // iterate over the values and add  
-                // it to unionSet 
-                for (var elem of this) {
-                    unionSet.add(elem);
-                }
+            // iterate over the values and add  
+            // it to unionSet 
+            for (var elem of this) {
+                unionSet.add(elem);
+            }
 
-                // iterate over the values and add it to  
-                // the unionSet 
-                for (var elem of otherSet)
-                    unionSet.add(elem);
+            // iterate over the values and add it to  
+            // the unionSet 
+            for (var elem of otherSet)
+                unionSet.add(elem);
 
-                // return the values of unionSet 
-                return unionSet;
-            } 
+            // return the values of unionSet 
+            return unionSet;
+        }
         function find_intersection_areas() {
+            INTER_FLAG = true
             if (sp_set.size === 0) {
-                area_set=new Set(this.rel.split(','));
+                area_set = new Set(this.rel.split(','));
                 sp_set.add(this.id);
                 // return 0
             }
             else if (sp_set.has(this.id)) {
                 sp_set.delete(this.id)
-                if(sp_set.size===0)
-                {
-                    area_set=new Set()
+                if (sp_set.size === 0) {
+                    area_set = new Set()
                     clear()
+                    INTER_FLAG = false
                     return 0
                 }
-                area_set=new Set($('#'+sp_set.values().next().value)[0].rel.split(','))
-                sp_set.forEach(x=>{
-                    area_set=area_set.intersection(new Set($('#' + x)[0].rel.split(',')))
+                area_set = new Set($('#' + sp_set.values().next().value)[0].rel.split(','))
+                sp_set.forEach(x => {
+                    area_set = area_set.intersection(new Set($('#' + x)[0].rel.split(',')))
                 })
             }
             else {
                 sp_set.add(this.id)
-                area_set=area_set.intersection(new Set(this.rel.split(',')))
+                area_set = area_set.intersection(new Set(this.rel.split(',')))
             }
             rel_set = area_set.union(sp_set)
             $('#inter')[0].rel = [...rel_set].join(',')
             highlight("inter")
+            disable_hover()
         }
-           /*
-            function intersect_area(a, b) {
-                let c = 0, x = []
-                a = Array.from(a.split(','), Number)
-                b = Array.from(b.split(','), Number)
-                for (i = 0; i < a.length; i++) {
-                    for (j = 0; j < b.length; j++) {
-                        if (a[i] === b[j])
-                            c = 1
-                    }
-                    if (c === 1)
-                        x = x.concat(a[i])
-                    c = 0
-                }
-                return (x.toString())
-            }
-            */
+        function disable_hover() {
+            // $().
+         }
+
     </script>
 
     <!-- This script is just for adding classes to each of the area tags, allows for Easy Modifications -->
     <script>
-                // Shorthand for $( document ).ready()
-                $("area").attr({ "class": "iborderFF0000 iopacity70 icolorFF0000", "shape": "poly" });
-                $("area[type='species'").click(find_intersection_areas)
-                $('#searchbar').focus()
-                clear()
+        // Shorthand for $( document ).ready() -> $(function(){});
+        // $("area").attr({ "class": "iborderFF0000 iopacity70 icolorFF0000", "shape": "poly" });
+        $("area[type='map_area']").attr({ "class": "nofade noborder iopacity70 icolorFF0000", "shape": "poly" });
+        $("area[type='species']").attr({ "class": "nofade iopacity70 icolor0000FF", "shape": "poly" });
+        $("area[type='species']").click(find_intersection_areas)
+        $('#searchbar').focus()
+        clear()
     </script>
 
     <!--Here is where the list for the search is created-->
     <script type="text/javascript">
 
-                species_to_id = {}
-                $("area[type='species']").each(
-                    function (i, obj) {
-                        (
-                            species_to_id[$(this).attr('title').toLowerCase()] = $(this).attr('id')
-                        )
-                    });
-                $("area[type='map_area']").each(
-                    function (i, obj) {
-                        (
-                            species_to_id[$(this).attr('id').toString().toLowerCase()] = $(this).attr('id')
-                        )
-                    });
-                species_list = Object.keys(species_to_id);
+        species_to_id = {}
+        $("area[type='species']").each(
+            function (i, obj) {
+                (
+                    species_to_id[$(this).attr('title').toLowerCase()] = $(this).attr('id')
+                )
+            });
+        $("area[type='map_area']").each(
+            function (i, obj) {
+                (
+                    species_to_id[$(this).attr('id').toString().toLowerCase()] = $(this).attr('id')
+                )
+            });
+        species_list = Object.keys(species_to_id);
     </script>
     <!-- THis script is the autocomplete part -->
     <script>
-            function autocomplete(inp, arr) {
-                /*the autocomplete function takes two arguments,
-                the text field element and an array of possible autocompleted values:*/
-                var currentFocus;
-                /*execute a function when someone writes in the text field:*/
-                inp.addEventListener("input", function (e) {
-                    var a, b, i, val = this.value;
-                    /*close any already open lists of autocompleted values*/
-                    closeAllLists();
-                    if (!val) { return false; }
-                    currentFocus = -1;
-                    /*create a DIV element that will contain the items (values):*/
-                    a = document.createElement("DIV");
-                    a.setAttribute("id", this.id + "autocomplete-list");
-                    a.setAttribute("class", "autocomplete-items");
-                    /*append the DIV element as a child of the autocomplete container:*/
-                    this.parentNode.appendChild(a);
-                    /*for each item in the array...*/
-                    for (i = 0; i < arr.length; i++) {
-                        /*check if the item starts with the same letters as the text field value:*/
-                        if (arr[i].includes(val.toLowerCase())) {
-                            /*create a DIV element for each matching element:*/
-                            b = document.createElement("DIV");
-                            /*make the matching letters bold:*/
-                            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-                            b.innerHTML += arr[i].substr(val.length);
-                            /*insert a input field that will hold the current array item's value:*/
-                            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-                            /*execute a function when someone clicks on the item value (DIV element):*/
-                            b.addEventListener("mouseover", function (e) {
-                                /*insert the value for the autocomplete text field:*/
-                                inp.value = this.innerText
-                                // inp.value = this.getElementsByTagName("input")[0].value;
-                                search_animal()
-                                /*close the list of autocompleted values,
-                                (or any other open lists of autocompleted values:*/
-                                // closeAllLists();
-                            });
-                            b.addEventListener("mouseout", function (e) {
-                                /*insert the value for the autocomplete text field:*/
-                                // inp.value = this.getElementsByTagName("input")[0].value;
-                                // search_animal()
-                                clear()
-                                /*close the list of autocompleted values,
-                                (or any other open lists of autocompleted values:*/
-                                // closeAllLists();
-                            });
-                            b.addEventListener("click", function (e) {
-                                /*insert the value for the autocomplete text field:*/
-                                inp.value = this.innerText
-                                // console.log(inp.value)
-                                search_animal()
-                                /*close the list of autocompleted values,
-                                (or any other open lists of autocompleted values:*/
-                                closeAllLists();
-                            });
-                            a.appendChild(b);
-                        }
+        function autocomplete(inp, arr) {
+            /*the autocomplete function takes two arguments,
+            the text field element and an array of possible autocompleted values:*/
+            var currentFocus;
+            /*execute a function when someone writes in the text field:*/
+            inp.addEventListener("input", function (e) {
+                var a, b, i, val = this.value;
+                /*close any already open lists of autocompleted values*/
+                closeAllLists();
+                if (!val) { return false; }
+                currentFocus = -1;
+                /*create a DIV element that will contain the items (values):*/
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                /*append the DIV element as a child of the autocomplete container:*/
+                this.parentNode.appendChild(a);
+                /*for each item in the array...*/
+                for (i = 0; i < arr.length; i++) {
+                    /*check if the item starts with the same letters as the text field value:*/
+                    if (arr[i].includes(val.toLowerCase())) {
+                        /*create a DIV element for each matching element:*/
+                        b = document.createElement("DIV");
+                        /*make the matching letters bold:*/
+                        b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                        b.innerHTML += arr[i].substr(val.length);
+                        /*insert a input field that will hold the current array item's value:*/
+                        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                        /*execute a function when someone clicks on the item value (DIV element):*/
+                        b.addEventListener("mouseover", function (e) {
+                            /*insert the value for the autocomplete text field:*/
+                            inp.value = this.innerText
+                            // inp.value = this.getElementsByTagName("input")[0].value;
+                            search_animal()
+                            /*close the list of autocompleted values,
+                            (or any other open lists of autocompleted values:*/
+                            // closeAllLists();
+                        });
+                        b.addEventListener("mouseout", function (e) {
+                            /*insert the value for the autocomplete text field:*/
+                            // inp.value = this.getElementsByTagName("input")[0].value;
+                            // search_animal()
+                            clear()
+                            /*close the list of autocompleted values,
+                            (or any other open lists of autocompleted values:*/
+                            // closeAllLists();
+                        });
+                        b.addEventListener("click", function (e) {
+                            /*insert the value for the autocomplete text field:*/
+                            inp.value = this.innerText
+                            // console.log(inp.value)
+                            search_animal()
+                            /*close the list of autocompleted values,
+                            (or any other open lists of autocompleted values:*/
+                            closeAllLists();
+                        });
+                        a.appendChild(b);
                     }
-                });
-                /*execute a function presses a key on the keyboard:*/
-                inp.addEventListener("keydown", function (e) {
-                    var x = document.getElementById(this.id + "autocomplete-list");
-                    if (x) x = x.getElementsByTagName("div");
-                    if (e.keyCode == 40) {
-                        /*If the arrow DOWN key is pressed,
-                        increase the currentFocus variable:*/
-                        currentFocus++;
-                        /*and and make the current item more visible:*/
-                        addActive(x);
-                    } else if (e.keyCode == 38) { //up
-                        /*If the arrow UP key is pressed,
-                        decrease the currentFocus variable:*/
-                        currentFocus--;
-                        /*and and make the current item more visible:*/
-                        addActive(x);
-                    } else if (e.keyCode == 13) {
-                        /*If the ENTER key is pressed, prevent the form from being submitted,*/
-                        e.preventDefault();
-                        if (currentFocus > -1) {
-                            /*and simulate a click on the "active" item:*/
-                            if (x) x[currentFocus].click();
-                        }
+                }
+            });
+            /*execute a function presses a key on the keyboard:*/
+            inp.addEventListener("keydown", function (e) {
+                var x = document.getElementById(this.id + "autocomplete-list");
+                if (x) x = x.getElementsByTagName("div");
+                if (e.keyCode == 40) {
+                    /*If the arrow DOWN key is pressed,
+                    increase the currentFocus variable:*/
+                    currentFocus++;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 38) { //up
+                    /*If the arrow UP key is pressed,
+                    decrease the currentFocus variable:*/
+                    currentFocus--;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 13) {
+                    /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                    e.preventDefault();
+                    if (currentFocus > -1) {
+                        /*and simulate a click on the "active" item:*/
+                        if (x) x[currentFocus].click();
                     }
-                    // else {
-                    //     currentFocus = 0
-                    // }
-                });
-                function addActive(x) {
-                    /*a function to classify an item as "active":*/
-                    if (!x) return false;
-                    /*start by removing the "active" class on all items:*/
-                    removeActive(x);
-                    if (currentFocus >= x.length) currentFocus = 0;
-                    if (currentFocus < 0) currentFocus = (x.length - 1);
-                    /*add class "autocomplete-active":*/
-                    x[currentFocus].classList.add("autocomplete-active");
-                    // console.log(currentFocus)
-                    // console.log(x)
-                    highlight(species_to_id[$('.autocomplete-active').text()])
                 }
-                function removeActive(x) {
-                    /*a function to remove the "active" class from all autocomplete items:*/
-                    // for (var i = 0; i < x.length; i++) {
-                    //     x[i].classList.remove("autocomplete-active");
-                    // }
-                    $('.autocomplete-active').removeClass('autocomplete-active')
-                }
-                function closeAllLists(elmnt) {
-                    /*close all autocomplete lists in the document,
-                    except the one passed as an argument:*/
-                    var x = document.getElementsByClassName("autocomplete-items");
-                    for (var i = 0; i < x.length; i++) {
-                        if (elmnt != x[i] && elmnt != inp) {
-                            x[i].parentNode.removeChild(x[i]);
-                        }
-                    }
-                    // currentFocus = -1;
-                }
-                /*execute a function when someone clicks in the document:*/
-                document.addEventListener("click", function (e) {
-                    closeAllLists(e.target);
-                });
+                // else {
+                //     currentFocus = 0
+                // }
+            });
+            function addActive(x) {
+                /*a function to classify an item as "active":*/
+                if (!x) return false;
+                /*start by removing the "active" class on all items:*/
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = (x.length - 1);
+                /*add class "autocomplete-active":*/
+                x[currentFocus].classList.add("autocomplete-active");
+                // console.log(currentFocus)
+                // console.log(x)
+                highlight(species_to_id[$('.autocomplete-active').text()])
             }
+            function removeActive(x) {
+                /*a function to remove the "active" class from all autocomplete items:*/
+                // for (var i = 0; i < x.length; i++) {
+                //     x[i].classList.remove("autocomplete-active");
+                // }
+                $('.autocomplete-active').removeClass('autocomplete-active')
+            }
+            function closeAllLists(elmnt) {
+                /*close all autocomplete lists in the document,
+                except the one passed as an argument:*/
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                    if (elmnt != x[i] && elmnt != inp) {
+                        x[i].parentNode.removeChild(x[i]);
+                    }
+                }
+                // currentFocus = -1;
+            }
+            /*execute a function when someone clicks in the document:*/
+            document.addEventListener("click", function (e) {
+                closeAllLists(e.target);
+            });
+        }
     </script>
 
 
