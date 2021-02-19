@@ -60,13 +60,15 @@
         }
         .btn-group button {
             position:relative;
-            left: 15%;
+            left: 14%;
             background-color: #42aaff; /* Blue background */
-            border: 1px solid rgb(47, 1, 255); /* Blue border */
+            border: 1px solid #42aaff; /* Blue border */
             color: white; /* White text */
             padding: 0px 10px; /* Some padding */
             cursor: pointer; /* Pointer/hand icon */
-            width: 8%; /* Set a width if needed */
+            width: auto; /* Set a width if needed */
+            height: 35px;
+            font-size: 15px;
             float: left; /* Make the buttons appear below each other */
           }
           
