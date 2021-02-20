@@ -538,16 +538,64 @@
     </div>
     <!-- </div> -->
 
-    <div class="btn-group" style="position: relative;">
-        <button onclick="location.href='AllCetaceans.html'">All cetaceans</button>
-        <button onclick="location.href='BaleenWhales.html'">Baleen whales</button>
-        <button onclick="location.href='DelphidsL.html'">Large toothed whales</button>
-        <button onclick="location.href='DelphidsS1.html'">Small toothed whales - 1</button>
-        <button onclick="location.href='DelphidsS2.html'">Small toothed whales - 2</button>
-        <button onclick="location.href='BeakedWhales.html'">Beaked whales</button>
-        <button>Info</button>
-        <button>About</button>
-      </div>
+   <!-- This part is the Ribbon -->
+   <div class="btn-group" style="position: relative;">
+    <button onclick="location.href='AllCetaceans.html'">Home</button>
+    <button>About</button>
+    <button onclick="location.href='BaleenWhales.html'">Baleen whales</button>
+    <button onclick="location.href='DelphidsL.html'">Large toothed whales</button>
+    <button onclick="location.href='DelphidsS1.html'">Small toothed whales - 1</button>
+    <button onclick="location.href='DelphidsS2.html'">Small toothed whales - 2</button>
+    <button onclick="location.href='BeakedWhales.html'">Beaked whales</button>
+    <button onclick="location.href='AllCetaceans.html'">All cetaceans</button>
+  </div>
+  
+ <!--This part is the Info button-->
+    <button id="myBtn" class="info-button" style="position: relative;">
+    <img src="Info_img.png" height="30"/>
+    </button>
+
+
+<!-- The Modal -->
+    <div id="myModal" class="modal">
+ <!-- Modal content -->
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <center>
+    <p style="font-size: 18px; font-family:cursive; color:mintcream;">While many large cetaceans are referred to as whales, they are not. ‘Large’ toothed whales are in many ways like smaller dolphins. These animals use high frequency echolocation clicks to navigate and communicate with each other, while ‘real’ whales use low frequency calls. These animals also form large groups, sometimes consisting of hundreds of individuals like in case of pilot whales. Cohesion within such large groups may sometimes lead to unfortunate mass strandings of animals, as individuals may follow each other into shallow waters, like in New Zealand in 2020.</p>
+    <p style="font-size: 18px; font-family:cursive; color:mintcream;">The largest of toothed whales is the Sperm whale, which also has the biggest brains in the animal kingdom. Sperm whales are some of the loudest animals on earth with vocalisations reaching up to 230 dB (a jet taking off is ~ 140 dB)! Their echolocation clicks are so powerful, that they may ‘vibrate’ divers to death, even though no animal has done that yet. Good guy Sperm whale!</p>
+    <center>
+    </div>
+    </div>
+    
+<!--This is where the dialog box is called-->
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
       
     <!-- // This script is to resize the area to the image drawn on the webpage -->
     <script type="text/javascript">

@@ -495,7 +495,7 @@
           type="species" />
 
         <area
-			coords="3200,745,3186,747,3186,748,3173,748,3173,749,3158,750,3158,751,3154,751,3154,752,3142,753,3142,754,3132,754,3132,755,3128,755,3128,756,3112,756,3112,755,3105,757,3105,759,3103,759,3103,761,3096,764,3096,758,2974,768,2952,772,2952,773,2950,773,2949,775,2947,775,2946,777,2939,781,2939,783,2934,786,2934,787,2930,788,2928,791,2922,792,2923,787,2925,787,2925,785,2927,785,2931,778,2931,774,2933,773,2933,770,2934,770,2938,765,2941,765,2951,757,2953,757,2953,755,2955,755,2955,753,2957,753,2957,751,2959,751,2959,749,2964,746,2964,745,2968,744,2970,741,2974,740,2976,737,2979,737,2980,735,2983,735,2984,733,2987,733,2988,731,2991,731,2991,730,2994,726,2992,722,3002,724,3014,724,3020,724,3020,723,3034,722,3074,720,3110,720,3110,721,3114,721,3114,722,3126,722,3126,723,3130,723,3130,724,3152,724,3152,725,3156,725,3156,726,3158,726,3158,727,3162,727,3162,728,3166,728,3166,729,3170,729,3170,730,3190,732,3198,735,3201,743,2921,794,2918,794,2919,791,2920,791,2920,792"
+			coords="3200,740,3193,739,3191,743,3186,743,3186,744,3183,744,3183,745,3180,745,3180,746,3174,746,3174,747,3170,747,3170,748,3166,748,3166,749,3162,749,3162,750,3152,751,3152,752,3142,753,3142,754,3132,754,3132,755,3128,755,3128,756,3120,756,3120,757,3118,757,3118,758,3115,759,3108,764,3109,760,3105,759,3096,764,3096,758,3047,758,3020,758,3020,759,3016,759,3016,760,3006,760,3006,761,3004,761,3004,762,2994,762,2994,763,2990,763,2974,768,2966,769,2966,770,2964,770,2964,771,2961,771,2960,773,2958,773,2956,776,2955,776,2955,778,2954,778,2950,783,2942,782,2942,783,2940,783,2940,784,2938,784,2938,785,2936,785,2936,786,2934,786,2934,787,2932,787,2931,789,2922,792,2922,790,2921,790,2922,787,2929,782,2929,780,2934,776,2936,773,2939,773,2940,771,2942,771,2942,770,2945,768,2945,766,2947,765,2947,762,2948,762,2951,757,2953,757,2953,755,2955,755,2955,753,2957,753,2957,751,2959,751,2959,749,2964,746,2964,745,2968,744,2970,741,2974,740,2976,737,2979,737,2980,735,2983,735,2984,733,2987,733,2988,731,2991,731,2991,730,2994,726,2992,722,3002,724,3014,724,3020,724,3081,720,3110,720,3110,721,3114,721,3114,722,3126,722,3126,723,3130,723,3130,724,3152,724,3152,725,3156,725,3156,726,3158,726,3158,727,3162,727,3162,728,3166,728,3166,729,3178,730,3178,731,3182,731,3182,732,3190,732,3190,733,3194,733,3194,734,3196,734,3196,735,3198,735,2921,794,2918,794,2919,791,2920,791,2920,792"
           id="Bo" alt="Omura's whale" title="Omura's whale"
           rel="26,27,43,47,53,57,58,59,67,77,78,79,81,82,83,84,85,86,87,88" type="species" />
 
@@ -558,17 +558,67 @@
     </div>
     <!-- </div> -->
 
+    <!-- This part is the Ribbon -->
     <div class="btn-group" style="position: relative;">
-        <button onclick="location.href='AllCetaceans.html'">All cetaceans</button>
+        <button onclick="location.href='AllCetaceans.html'">Home</button>
+        <button>About</button>
         <button onclick="location.href='BaleenWhales.html'">Baleen whales</button>
         <button onclick="location.href='DelphidsL.html'">Large toothed whales</button>
         <button onclick="location.href='DelphidsS1.html'">Small toothed whales - 1</button>
         <button onclick="location.href='DelphidsS2.html'">Small toothed whales - 2</button>
         <button onclick="location.href='BeakedWhales.html'">Beaked whales</button>
-        <button>Info</button>
-        <button>About</button>
+        <button onclick="location.href='AllCetaceans.html'">All cetaceans</button>
       </div>
       
+     <!--This part is the Info button-->
+        <button id="myBtn" class="info-button" style="position: relative;">
+        <img src="Info_img.png" height="30"/>
+        </button>
+
+
+    <!-- The Modal -->
+        <div id="myModal" class="modal">
+     <!-- Modal content -->
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <center>
+        <p style="font-size: 18px; font-family:cursive; color:mintcream;">Baleen whales are some of the largest creatures to have ever existed on the planet, and quite ironically feed on some of the smallest organisms in the oceans. Most species engulf a vast volume of water and filter fish and plankton through keratinous ‘baleen plates’ in their mouths.</p>
+        <p style="font-size: 18px; font-family:cursive; color:mintcream;">Baleen whales communicate through very low frequency calls, and using underwater acoustic super-highways, may even be able to hear each other across oceans! Most species like the Humpback whale make the most out of their lives travelling vast distances and by singing on breeding grounds to attract the ladies. Researchers love to eavesdrop on singing males and believe that the noble whales always forgive their intrusion. Whale songs mutate and evolve with time, just like our stories and cultures do.</p>
+        <p style="font-size: 18px; font-family:cursive; color:mintcream ;">Whale songs are eerily mellifluous. They were first recorded and played to the public in 1970, and gathered a huge momentum for their conservation, even leading to bans on commercial whaling. <i>Songs of the Humpback Whale</i> has been the best-selling natural history album of all time, even securing a seat on the Voyager spacecraft!</p>
+        <p style="font-size: 18px; font-family:cursive; color:mintcream">Learning about them is one whale of an experience, so go immerse yourself!</p> 
+        <center>
+        </div>
+        </div>
+
+    <!--This is where the dialog box is called-->
+<script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
     <!-- // This script is to resize the area to the image drawn on the webpage -->
     <script type="text/javascript">
 	window.onload = function () {

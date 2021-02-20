@@ -570,16 +570,65 @@
     </div>
     <!-- </div> -->
 
+    <!-- This part is the Ribbon -->
     <div class="btn-group" style="position: relative;">
-        <button onclick="location.href='AllCetaceans.html'">All cetaceans</button>
+        <button onclick="location.href='AllCetaceans.html'">Home</button>
+        <button>About</button>
         <button onclick="location.href='BaleenWhales.html'">Baleen whales</button>
         <button onclick="location.href='DelphidsL.html'">Large toothed whales</button>
         <button onclick="location.href='DelphidsS1.html'">Small toothed whales - 1</button>
         <button onclick="location.href='DelphidsS2.html'">Small toothed whales - 2</button>
         <button onclick="location.href='BeakedWhales.html'">Beaked whales</button>
-        <button>Info</button>
-        <button>About</button>
+        <button onclick="location.href='AllCetaceans.html'">All cetaceans</button>
       </div>
+      
+     <!--This part is the Info button-->
+        <button id="myBtn" class="info-button" style="position: relative;">
+        <img src="Info_img.png" height="30"/>
+        </button>
+
+
+    <!-- The Modal -->
+        <div id="myModal" class="modal">
+     <!-- Modal content -->
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <center>
+        <p style="font-size: 18px; font-family:cursive; color:mintcream;">Small dolphins are usually at the top of a food chain in an ecosystem, and their intellect has made them ferocious predators. Together, dolphins are even known to scare away mighty sharks! Group cohesion is a fundamentally important part of being a dolphin and some ‘dolphinships’ are known to last a lifetime!</p>
+        <p style="font-size: 18px; font-family:cursive; color:mintcream;">Unfortunately, many dolphins today live a very stressed and dangerous life. They are at a frequent risk of death from accident entanglement in fishing nets all over the world, while an increase in underwater noise and other forms of pollution has contributed to increased stress levels in many populations. Humans have changed their habitats causing a direct or indirect effect on many species.</p>
+        <p style="font-size: 18px; font-family:cursive; color:mintcream ;">To know more about these animals, you should dolphinately catch up on awesome videos and information available online.</b></p>
+        <center>
+        </div>
+        </div>
+        
+    <!--This is where the dialog box is called-->
+<script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
       
     <!-- // This script is to resize the area to the image drawn on the webpage -->
     <script type="text/javascript">
