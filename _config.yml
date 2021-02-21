@@ -1,3 +1,2 @@
 theme: jekyll-default-layout
-permalink: Home.html
-layout: page
+baseurl: "Home.html" 
