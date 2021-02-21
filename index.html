@@ -22,8 +22,8 @@
         <button onclick="location.href='AllCetaceans.html'">All cetaceans</button>
       </div>
 
-      <div class="leftp" style="position: absolute;">
-        <img id="comic" height="545px"/>
+      <div class="leftp">
+        <img id="comic" height="600px"/>
         <h3><span id="num">#</span>. <span id='title'>title</span></h3>
         <!--Bottom Controls-->
         <button class="prevBtn" disabled>PREVIOUS</button>
@@ -106,7 +106,6 @@ var img = [
         
         
         var curImgIndex = 0;
-        console.log(curImgIndex);
         function setComic()
         {   
             document.getElementById("comic").src = img[curImgIndex][0];
