@@ -67,7 +67,7 @@ input[type=submit] {
     cursor: pointer; /* Pointer/hand icon */
     width: 8.2vw; /* Set a width if needed */
     height: 5vh;
-    font-size: 111%;
+    font-size: 2vh;
     float: left;
   }  
   .btn-group button:not(:last-child) {
