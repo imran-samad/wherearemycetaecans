@@ -58,31 +58,27 @@ input[type=submit] {
     background-color: #1e90ff55 !important;
     color: #000000;
 }
-.btn-group button {
-    position: relative;
-    left: 0%;
-        background-color: #57595a; /* Blue background */
-        border: 1px solid #57595a; /* Blue border */
+.btn-group {
+    background-color: #57595a; /* Blue background */
+    border: 1px solid #57595a; /* Blue border */
     color: white; /* White text */
     padding: 0px 10px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
     width: auto; /* Set a width if needed */
-    height: 35px;
+    height: 38px;
     font-size: 111%;
-    float: left; /* Make the buttons appear below each other */
-  }
-  
-  .btn-group button:not(:last-child) {
+  }  
+  .btn-group:not(:last-child) {
     border-bottom: none; /* Prevent double borders */
     border-right: none; /* Prevent double borders */
   }
   
   /* Add a background color on hover */
-  .btn-group button:hover {
+  .btn-group:hover {
     background-color: #9a9d9e;
   }
   .search-wrapper{
-      position: relative;
+      position: absolute;
       left: 67.2%;
       top: 7px;
       height: 35px;
