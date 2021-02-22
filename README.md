@@ -2,9 +2,11 @@
 ---
 
 ## Features
-* Easy tracking of various cetaceans across the world map
+* Easy tracking of the distribution of various cetaceans across the world map
 * Hover to Highlight
+* Click on two or more species to visualise their common distribution areas
 * Search function to isolate a particular species
+* Distribution data from IUCN
 
 ## Mapper used:
 * This project uses Mapper.js (2.4) (mapper.netzgesta.de © 2021 by Christian Effenberger)
