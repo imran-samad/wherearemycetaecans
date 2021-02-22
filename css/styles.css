@@ -68,7 +68,7 @@ input[type=submit] {
     cursor: pointer; /* Pointer/hand icon */
     width: auto; /* Set a width if needed */
     height: 35px;
-    font-size: 112%;
+    font-size: 111%;
     float: left; /* Make the buttons appear below each other */
   }
   
@@ -98,7 +98,7 @@ input[type=submit] {
     vertical-align: top;
     width: 20px;
     height: 20px;
-    left: 130px;
+    left: 150px;
     top: 50px;
 }
 #myBtn img {
