@@ -184,3 +184,6 @@ input[type=submit] {
     left: 20%;
     font-size: 150%;
 }
+.container{
+    width: 100%;
+}
