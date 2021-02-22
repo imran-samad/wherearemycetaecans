@@ -98,7 +98,7 @@ input[type=submit] {
     vertical-align: top;
     width: 20px;
     height: 20px;
-    left: 150px;
+    left: 160px;
     top: 50px;
 }
 #myBtn img {
@@ -167,7 +167,7 @@ input[type=submit] {
 
 .rightp{
     position:relative;
-    left: 66.5%;
+    left: 68%;
     top: -1%;
     color: rgb(0, 0, 0); /* White text */
     padding: 0px 10px; /* Some padding */
