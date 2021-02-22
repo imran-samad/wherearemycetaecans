@@ -168,13 +168,13 @@ input[type=submit] {
 .rightp{
     position:relative;
     left: 68%;
-    top: -4%;
+    top: -2%;
     color: rgb(0, 0, 0); /* White text */
     padding: 0px 10px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
     width: auto; /* Set a width if needed */
     height: 35px;
-    font-size: 16px;
+    font-size: 15.5px;
     font-family:cursive;
     float: left; /* Make the buttons appear below each other */
     color: mintcream;
