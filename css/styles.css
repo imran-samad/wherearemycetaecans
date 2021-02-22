@@ -65,8 +65,8 @@ input[type=submit] {
     color: white; /* White text */
     padding: 0px 10px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
-    width: auto; /* Set a width if needed */
-    height: 38px;
+    width: 8.2vw; /* Set a width if needed */
+    height: 5vh;
     font-size: 111%;
     float: left;
   }  
