@@ -68,7 +68,7 @@ input[type=submit] {
     cursor: pointer; /* Pointer/hand icon */
     width: auto; /* Set a width if needed */
     height: 35px;
-    font-size: 13px;
+    font-size: 15px;
     float: left; /* Make the buttons appear below each other */
   }
   
