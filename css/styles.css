@@ -91,6 +91,7 @@ input[type=submit] {
       color: #57595a;
   }
 .info-button {
+    position: absolute;
     display: inline-block;
     height: 30px;
     padding: 0;
@@ -98,8 +99,8 @@ input[type=submit] {
     vertical-align: top;
     width: 20px;
     height: 20px;
-    left: 160px;
-    top: 50px;
+    left: 78%;
+    top: 6%;
 }
 #myBtn img {
     position: relative;
