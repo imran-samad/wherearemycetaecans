@@ -60,7 +60,7 @@ input[type=submit] {
 }
 .btn-group button {
     position: relative;
-    left: 10%;
+    left: 0%;
         background-color: #57595a; /* Blue background */
         border: 1px solid #57595a; /* Blue border */
     color: white; /* White text */
