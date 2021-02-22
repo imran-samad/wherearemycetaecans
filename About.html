@@ -36,53 +36,18 @@
     </div>
 
     <div class= "rightp" style="position: absolute;">
-        <p style="font-size: 20px;">“If there is magic on this planet, it is contained in water.” — Loren Eiseley</p>
-        <p>Any alien life visiting us would be extremely confused about the fact that our planet is called the Earth, even though it is 2/3rd water. In this water there are creatures of magical existence, unfathomable in awe and undeniably alien to land-based life.</p>
-        <p>Whales, dolphins, and porpoises together are called cetaceans. Cetaceans evolved from "hoofed" terrestrial ancestors and they share common features like fins, tails and blowholes, making them appear more like fish than their closest relative, the Hippo.</p>
-        <p>Cetaceans are not fish. They are mammals just like humans. They breathe air and are warm blooded. It is difficult for us (being land based mammals) to understand cetaceans like we understand elephants or tigers, but their lore and enchantment has driven many to pursue a career in cetacean research and uncover many of their secrets. Thank god for such people!</p>
-        <p> Cetaceans come in all shapes and sizes and are found all around the planet. Here, we have created interactive maps to help visualise and compare the distribution of different species of whales, dolphins, and porpoises, while also providing a size-wise comparison of them.</p>
-        <button id="infoh" class="infohp">How to use this site</button>
+        <p>This website is jointly created and managed by me (Imran) and my friend Nishkal Prakash, with critical inputs from another friend, Divyashree Rana.</p>
+        <p>As an academic I am a post-graduate in Wildlife Biology and Conservation with a great love for coastal and marine ecosystems. <br>As a person I love to spend time outdoors, meet new people and learn new things every day. I like to condense my thoughts and perspectives on life in words and run a <a style="color: rgb(98, 224, 14);" href="http://commotionofemotions.blogspot.com/">blog</a> to express them to people.</p>
+        <p>Nishkal is a great friend with absolutely mad technical skills. This project wouldn't have been possible without his knowledge and inputs.</p>
+        <p>How we did it:<br>We have based the distribution of different species on IUCN data. Imagine stacking the distribution of all species together in a transparent film and cutting out different areas of the map (based on overlap of ranges) on a sketching paper. This is how we created the polygons that appear when hovering on the image of a species. These polygons are not accurate depictions of the IUCN data, but in general represent the distribution of one or more species.</p>
+        <p>Copyright info<br>
+            World map image:<br>
+            Species images:<br>
+            Softwares/scripts used: Maper.js is developed and distributed by <a style="color: rgb(98, 224, 14);" href="http://www.netzgesta.de/mapper/">Netzgestade</a>.<br>
+            Write to us at: imransamad7@gmail.com, nishkalprakash@gmail.com
+            </p>
     </div>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-           <div class="modal-content">
-           <span class="close">&times;</span>
-           <center>
-           <p style="font-size: 17px;"><b>Each page on the website has a global map accompanied by visual<br>representations of different species in the right panel. You may:<br>a) Hover over a species to see its distribution<br>b) Hover over an area to see what species are found there<br>c) Click on two or more species to see where they are jointly found<br>d) click on the info icon for more details</b></p>
-           <p>Whale, go on now. Have fun!</p> 
-           <center>
-           </div>
-           </div>
-   
-       <!--This is where the dialog box is called-->
-   <script>
-       // Get the modal
-       var modal = document.getElementById('myModal');
-       
-       // Get the button that opens the modal
-       var btn = document.getElementById("infoh");
-       
-       // Get the <span> element that closes the modal
-       var span = document.getElementsByClassName("close")[0];
-       
-       // When the user clicks the button, open the modal 
-       btn.onclick = function() {
-           modal.style.display = "block";
-       }
-       
-       // When the user clicks on <span> (x), close the modal
-       span.onclick = function() {
-           modal.style.display = "none";
-       }
-       
-       // When the user clicks anywhere outside of the modal, close it
-       window.onclick = function(event) {
-           if (event.target == modal) {
-               modal.style.display = "none";
-           }
-       }
-       </script>
+
     <script>
      "use strict";
 var img = [

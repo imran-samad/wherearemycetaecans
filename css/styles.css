@@ -166,7 +166,7 @@ input[type=submit] {
 }
 
 .rightp{
-    position:absolute;
+    position: relative;
     left: 68%;
     top: -2%;
     color: rgb(0, 0, 0); /* White text */
