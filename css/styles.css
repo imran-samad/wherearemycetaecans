@@ -59,7 +59,7 @@ input[type=submit] {
     color: #000000;
 }
 .btn-group button {
-    position:relative;
+    position: relative;
     left: 0%;
         background-color: #57595a; /* Blue background */
         border: 1px solid #57595a; /* Blue border */
@@ -151,10 +151,9 @@ input[type=submit] {
     cursor: pointer;
 }
 .leftp{
-    position: relative;
+    position: absolute;
     left: 0%;
-    right: 35%;
-    top: 20px;
+    top: 7%;
     color: rgb(0, 0, 0); /* White text */
     padding: 0px 10px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
