@@ -167,7 +167,7 @@ input[type=submit] {
 .rightp{
     position: relative;
     left: 68%;
-    top: -2%;
+    top:-1%;
     color: rgb(0, 0, 0); /* White text */
     padding: 0px 10px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
