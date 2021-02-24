@@ -61,9 +61,9 @@ input[type=submit] {
 .btn-group button{
     position: relative;
     background-color: #57595a; /* Blue background */
-    border: 1px solid #57595a; /* Blue border */
+    border: 0.1vw solid #57595a; /* Blue border */
     color: white; /* White text */
-    padding: 0px 10px; /* Some padding */
+    padding: 0px .5vw; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
     width: 8.2vw; /* Set a width if needed */
     height: 5vh;
