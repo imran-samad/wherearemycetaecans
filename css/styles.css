@@ -173,8 +173,8 @@ input[type=submit] {
     cursor: pointer; /* Pointer/hand icon */
     width: auto; /* Set a width if needed */
     height: 35px;
-    font-size: 1.0vw;
-    font-family:cursive;
+    font-size: 1.1vw;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     float: left; /* Make the buttons appear below each other */
     color: mintcream;
 }
